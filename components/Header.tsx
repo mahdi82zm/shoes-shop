@@ -7,7 +7,7 @@ import Zero from "../public/images/zero.svg";
 export default function Header() {
   return (
     <header>
-      <div className="bg-white my-3  rounded-xl flex justify-between p-4 items-center px-7">
+      <div className=" main-container bg-white my-3  rounded-xl flex justify-between p-4 items-center px-7">
         <div className="menu  ">
           <nav className="flex space-x-6">
             <Link href="/newdrops">New Drops 🔥</Link>
