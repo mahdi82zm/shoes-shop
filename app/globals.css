@@ -1,23 +1,25 @@
 @import "tailwindcss";
-
-body{
-  background-color:#E7E7E3;
-
-
-
-
-  margin:0 60px ;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e7e7e3;
+
+}
+.main-container{
+  margin:0 60px;
+}
+
+.bluecolor {
+  color: #4a69e2;
+}
+.big-font {
+  font-size: 195px;
+}
+
+.no-body-margin{
+  margin: 0 !important;
 }
