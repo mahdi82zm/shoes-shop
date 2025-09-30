@@ -6,6 +6,8 @@ import Slider from "@/components/Slider";
 import { supabase } from "@/lib/supabaseClient";
 
 import { useEffect, useState } from "react";
+import Reviews from "@/components/ReviewsCart";
+import ReviewsList from "@/components/ReviewsList";
 
 interface Products {
   id: number;
@@ -18,7 +20,7 @@ interface Products {
 export default function Home() {
   const [products, setProducts] = useState<Products[]>([]);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     const fetchProducts = async () => {
       const { data, error } = await supabase.from("products").select("*");
@@ -66,7 +68,7 @@ export default function Home() {
 
       <Category></Category>
 
-      
+      <ReviewsList></ReviewsList>
     </>
   );
 }
