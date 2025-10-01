@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="md:main-container  relative ">
-      <div className="flex flex-col md:flex-row bg-[#4A69E2] rounded-t-4xl justify-between items-center md:my-[60px] mdpy-20 z-10 relative">
-        <div className="main-container w-1/2 ">
-          <h3 className="font-bold text-4xl text-white pb-3 w-1/2">
+    <div className=" md:mx-[60px] mx-3 relative ">
+      <div className=" flex flex-col md:flex-row bg-[#4A69E2] rounded-t-4xl justify-between items-center md:my-[60px] md:py-20 z-10 relative pb-30">
+        <div className="md:mx-[30px] mx-1 p-5">
+          <h3 className="font-bold md:text-4xl text-2xl  text-white pb-3 ">
             Join our KicksPlus Club & get 15% off
           </h3>
           <p className="font-light text-sm pb-3 text-gray-300 ">
@@ -27,13 +27,13 @@ export default function Footer() {
           </div>
         </div>
         <img
-          className="mr-[60px]  sm:w-36  md:w-48 lg:w-[300px] w-1/2"
+          className="mr-[60px]  sm:w-36  md:w-35 md:pl-[20px]  lg:w-[300px] "
           src="/images/icon2.png"
           alt=""
         />
       </div>
-      <div className=" bg-[#232321] text-white font-light rounded-4xl -top-29   relative z-20">
-        <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-4  py-2 px-5 gap-7 justify-between gap-7 ">
+      <div className=" bg-[#232321] text-white font-light rounded-4xl md:-top-27 -top-20 relative z-20">
+        <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-4  py-2 px-5  justify-between gap-7 ">
           <div className="about-us  w-2/5 ">
             <h3 className="text-[#FFA52F] text-xl font-bold">About us</h3>
             <p>
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
           <div className=" w-1/5">
             <h3 className="text-[#FFA52F] text-xl font-bold">Follow us</h3>
-            <div className="flex gap-9  flex-col sm:flex-row">
+            <div className="flex md:gap-3 xl:gap-9  gap-9 sm:flex-row">
               <img src="/images/ic_baseline-facebook.svg" alt="" />
               <img src="/images/mdi_instagram.svg" alt="" />
               <img src="/images/mdi_twitter.svg" alt="" />
