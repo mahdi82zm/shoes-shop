@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const categories = [
   {
@@ -17,9 +17,23 @@ const categories = [
 
 export default function Category() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemPerSlide, setItemPerSlide] = useState(2);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemPerSlide(1);
+      } else {
+        setItemPerSlide(2);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const nextSlide = () => {
-    if (currentIndex < categories.length - 1) {
+    if (currentIndex < categories.length - itemPerSlide) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -57,28 +71,39 @@ export default function Category() {
         </div>
       </div>
       <div className=" flex ml-[60px]  ">
-        {categories.slice(currentIndex, currentIndex + 2).map((category) => (
-          <div
-            key={category.id}
-            className="bg-[#ECEEF0] flex-1  overflow-hidden flex flex-col"
-            style={{ height: "500px", borderRadius: "30px 0  0   0" }}
-          >
-            <div className="h-4/5 w-full overflow-hidden">
-              <img
-                src={category.image}
-                alt={category.name}
-                className="w-full h-full object-cover"
-              />
+        {categories
+          .slice(currentIndex, currentIndex + itemPerSlide)
+          .map((category) => (
+            <div
+              key={category.id}
+              className="bg-[#ECEEF0] flex-1  overflow-hidden  flex-col"
+              style={{ height: "500px", borderRadius: "30px 0  0   0" }}
+            >
+              <div className="h-4/5 w-full overflow-hidden">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="h-1/5 flex items-center justify-between main-container">
+                <h4 className="text-[#232321] font-[500] text-3xl text-center px-2 w-3">
+                  {category.name}
+                </h4>
+                <button
+                  type="button"
+                  title="go to category"
+                  className="bg-[#232321] rounded-lg p-2"
+                >
+                  <img
+                    src="/images/arrow_trend_right_up.svg"
+                    alt=""
+                    className="w-5"
+                  />
+                </button>
+              </div>
             </div>
-            <div className="h-1/5 flex items-center justify-between main-container">
-              <h4 className="text-[#232321] font-[500] text-3xl text-center px-2 w-3">
-                {category.name}
-              </h4>
-              <button type="button" title="go to category" className="bg-[#232321] rounded-lg p-2"><img src="/images/arrow_trend_right_up.svg" alt=""  className="w-5"/></button>
-              
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
