@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
         </div>
         <img
-          className="mr-[60px]  sm:w-36  md:w-35 md:pl-[20px]  lg:w-[300px] "
+          className="mr-[60px]  sm:w-36  md:w-35 md:pl-[20px] w-50 lg:w-[300px] "
           src="/images/icon2.png"
           alt=""
         />

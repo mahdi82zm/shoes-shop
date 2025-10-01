@@ -38,7 +38,7 @@ export default function Home() {
     <>
       <div className="  lg:mx-[60px] sm:mx-6 mx-4">
         <div className=" font-bold py-8">
-          <h2 className="w-full text-center  font-bold  text-6xl  lg:big-font md:text-8xl lg:text-[150px] xl:text-[223px]">
+          <h2 className="w-full text-center  font-bold  text-6xl   md:text-8xl lg:text-[140px] xl:text-[180px]">
             DO IT <span className="bluecolor "> RIGHT</span>
           </h2>
         </div>
