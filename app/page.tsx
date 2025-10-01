@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Reviews from "@/components/ReviewsCart";
 import ReviewsList from "@/components/ReviewsList";
 import Footer from "@/components/Footer";
+import Spinner from "../components/Spinner"
 
 interface Products {
   id: number;
@@ -32,7 +33,7 @@ export default function Home() {
     };
     fetchProducts();
   }, []);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner />;
 
   return (
     <>
